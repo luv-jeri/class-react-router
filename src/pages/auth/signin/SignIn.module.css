@@ -1,0 +1,70 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: radial-gradient(var(--clr-accent) 5px, var(--clr-text-main) 5px);
+    background-size: 60px 60px;
+}
+
+.box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--clr-bg-contrast);
+    padding: 2rem 4rem;
+    border: 0.2rem solid #000;
+    box-shadow: 10px 10px 0px 1px rgba(0, 0, 0, 1);
+}
+
+.box h1 {
+    margin: 1rem;
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--clr-text-secondary);
+    border-bottom: 0.3rem solid var(--accent-color)
+}
+
+.box input {
+    margin: 1rem;
+    padding: 0.6rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+    border: 0.2rem solid #000;
+    border-radius: 0.5rem;
+    box-shadow: 3px 3px 0px 1px rgba(0, 0, 0, 1);
+    transition: all 0.2s ease-in-out;
+}
+
+.box input:hover {
+    transform: rotate(1deg) skew(1deg) translate(5px, 1px);
+    box-shadow: 5px 5px 0px 1px rgba(0, 0, 0, 1);
+}
+
+.box input:focus {
+    transform: scale(1.1) rotate(1deg) skew(1deg) translate(5px, 1px);
+    box-shadow: 5px 5px 0px 1px rgba(0, 0, 0, 1);
+}
+
+.box button {
+    cursor: pointer;
+    margin: 1rem;
+    padding: 0.5rem 0.8rem;
+    font-size: 1.2rem;
+    font-weight: 900;
+    border: 0.2rem solid #000;
+    border-radius: 0.5rem;
+    background-color: var(--clr-accent);
+    color: var(--clr-text-main);
+    box-shadow: 3px 3px 0px 1px rgba(0, 0, 0, 1);
+    transition: all 0.2s ease-in-out;
+}
+
+.box button:hover {
+    transform: scale(0.9);
+    box-shadow: 1px 1px 0px 1px rgba(0, 0, 0, 1);
+    background-color: var(--clr-touch);
+    color: var(--primary-color);
+}
