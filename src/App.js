@@ -6,26 +6,49 @@ import Learn from './pages/app/learn/Learn';
 import Page404 from './pages/misc/Page404/Page404';
 import Chapter from './pages/app/chapter/Chapter';
 import SignIn from './pages/auth/signin/SignIn';
+import ProtectedRoute from './components/protected/ProtectedRoute';
 
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, Outlet } from 'react-router-dom';
 // yarn add react-router-dom
 // npm i react-router-dom
 import './App.css';
-
 
 function App() {
   return (
     <div className='App'>
       <Nav />
+
+
+
       <Routes>
         <Route path='/' element={<Hero />} />
-
         <Route path='/courses'>
-          <Route index element={<Courses />} />
-          <Route path=':courseID' element={<Details />} />
+          <Route
+            index
+            element={
+              <ProtectedRoute>
+                <Courses />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path=':courseID'
+            element={
+              <ProtectedRoute>
+                <Details />
+              </ProtectedRoute>
+            }
+          />
         </Route>
 
-        <Route path='learn/:courseID' element={<Learn />}>
+        <Route
+          path='learn/:courseID'
+          element={
+            <ProtectedRoute>
+              <Learn />
+            </ProtectedRoute>
+          }
+        >
           <Route path='chapter' element={<Chapter />} />
         </Route>
 

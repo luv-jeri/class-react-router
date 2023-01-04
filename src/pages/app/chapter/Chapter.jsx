@@ -9,7 +9,6 @@ function Chapter() {
   const chapter = course.chapters.find((el) => {
     return String(el.chapter) === String(state);
   });
-  console.log(chapter);
 
   return (
     <div>

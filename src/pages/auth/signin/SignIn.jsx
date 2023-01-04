@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import styles from './SignIn.module.css';
-import  useAuth  from '../../../context/AuthContext';
+import useAuth from '../../../context/AuthContext';
 import { Navigate } from 'react-router-dom';
 
 function SignIn() {
-  const { user, signin, singup } = useAuth();
+  const { user, login, register } = useAuth();
 
   const [email, setEmail] = useState(null);
   const [password, setPassword] = useState(true);
@@ -34,16 +34,14 @@ function SignIn() {
         <div>
           <button
             onClick={() => {
-              console.log('hell');
-              signin(email, password);
+              login(email, password);
             }}
           >
             Login
           </button>
           <button
             onClick={() => {
-              console.log('hell');
-              singup(email, password);
+              register(email, password);
             }}
           >
             Register

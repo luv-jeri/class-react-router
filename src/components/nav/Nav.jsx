@@ -1,8 +1,9 @@
 import React from 'react';
 import style from './Nav.module.css';
 import { Link, useNavigate } from 'react-router-dom';
-
+import useAuth from '../../context/AuthContext';
 function Nav() {
+  const { user, logout } = useAuth();
   const navigate = useNavigate();
   return (
     <nav>
@@ -22,9 +23,22 @@ function Nav() {
         </div>
         <div className={style.nav_details}>
           <button>
-            <Link to='/courses'>'COURSES'</Link>
+            <Link to='/courses'>COURSES</Link>
           </button>
           <button>{'Light'}</button>
+          {user ? (
+            <button
+              onClick={() => {
+                logout();
+              }}
+            >
+              Logout
+            </button>
+          ) : (
+            <button>
+              <Link to='/signin'>Login</Link>
+            </button>
+          )}
         </div>
       </div>
     </nav>

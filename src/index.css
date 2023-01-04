@@ -20,6 +20,10 @@
   --clr-touch: #46C2CB;
 }
 
+a {
+  text-decoration: none;
+}
+
 
 .dark-theme {
   --clr-accent: #EB455F;
